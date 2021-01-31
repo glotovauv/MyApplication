@@ -1,42 +1,97 @@
 package com.home.demo.task_manager
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var diceImage : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val rollButton: Button = findViewById(R.id.roll_button)
         val countUpButton: Button = findViewById(R.id.count_up)
         val resetButton: Button = findViewById(R.id.reset)
-        val resultText: TextView = findViewById(R.id.result_text)
-        rollButton.setOnClickListener { rollDice(resultText) }
-        countUpButton.setOnClickListener { countUp(resultText) }
-        resetButton.setOnClickListener { reset(resultText) }
+        diceImage = findViewById(R.id.dice_image)
+        rollButton.setOnClickListener { rollDice() }
+        countUpButton.setOnClickListener { countUp() }
+        resetButton.setOnClickListener { reset() }
     }
 
-    private fun rollDice(resultText: TextView) {
+    private fun rollDice() {
         val randomInt = (1..6).random()
-        resultText.text = randomInt.toString()
+        val tag : Int
+        val drawableResource = when (randomInt) {
+            1 -> {
+                tag = 1
+                R.drawable.dice_1
+            }
+            2 -> {
+                tag = 2
+                R.drawable.dice_2
+            }
+            3 -> {
+                tag = 3
+                R.drawable.dice_3
+            }
+            4 -> {
+                tag = 4
+                R.drawable.dice_4
+            }
+            5 -> {
+                tag = 5
+                R.drawable.dice_5
+            }
+            else -> {
+                tag = 6
+                R.drawable.dice_6
+            }
+        }
+        diceImage.setImageResource(drawableResource)
+        diceImage.tag = tag
         Toast.makeText(
             this, "button clicked",
             Toast.LENGTH_SHORT
         ).show()
     }
 
-    private fun countUp(resultText: TextView) {
-        if (resultText.text.toString() == "Hello World!") {
-            resultText.text = "1"
-        } else if (resultText.text.toString() != "6") {
-            resultText.text = (resultText.text.toString().toInt() + 1).toString()
+    private fun countUp() {
+        val tag : Int
+        val image : Int = when (diceImage.tag) {
+            1 -> {
+                tag = 2
+                R.drawable.dice_2
+            }
+            2 -> {
+                tag = 3
+                R.drawable.dice_3
+            }
+            3 -> {
+                tag = 4
+                R.drawable.dice_4
+            }
+            4 -> {
+                tag = 5
+                R.drawable.dice_5
+            }
+            5 -> {
+                tag = 6
+                R.drawable.dice_6
+            }
+            else -> {
+                tag = 1
+                R.drawable.dice_1
+            }
         }
+        diceImage.setImageResource(image)
+        diceImage.tag = tag
     }
 
-    private fun reset(resultText: TextView) {
-        resultText.text = "0"
+        private fun reset() {
+        diceImage.setImageResource(R.drawable.empty_dice)
     }
 }
