@@ -1,10 +1,13 @@
 package com.home.demo.task_manager
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +16,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(findViewById(R.id.toolbar))
+
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
+            Snackbar.make(view, "This FAB needs an action!", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+        }
+
         val rollButton: Button = findViewById(R.id.roll_button)
         val countUpButton: Button = findViewById(R.id.count_up)
         val resetButton: Button = findViewById(R.id.reset)
@@ -93,5 +103,11 @@ class MainActivity : AppCompatActivity() {
 
         private fun reset() {
         diceImage.setImageResource(R.drawable.empty_dice)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
     }
 }
