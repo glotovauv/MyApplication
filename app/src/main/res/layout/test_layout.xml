@@ -28,4 +28,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView">
     </TextView>
+    <Button
+        android:id="@+id/first_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/to_first_screen" />
 </LinearLayout>

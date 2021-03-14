@@ -5,7 +5,7 @@
     <string name="count_up">Count Up</string>
     <string name="reset">Reset</string>
     <string name="hello_world">Hello world!</string>
-    <string name="name">Виталик</string>
+    <string name="name">Виталик и Юля</string>
     <string name="yellow_star">Yellow star</string>
 
     <string name="bio">
@@ -18,5 +18,17 @@
         \nНо это интересно и крайней мере необычно.
         \n\nЯ буду продолжать заниматься.
         \nНадеюсь, что смогу сделать еще что-нибудь прикольное.\n\n
+    </string>
+    <string name="second_screen">To second screen</string>
+    <string name="to_first_screen">Return to previous screen</string>
+    <string name="test_screen">To test screen</string>
+    <string name="bio2">
+        Привет, Виталик! Меня зовут Юля.
+        \n\nОказалось совсем непросто занять местечко рядом с тобой.
+        \n\nСейчас я пыталась разобраться, как задать размер твоего скрол текста так,
+        чтобы он был не match_parent, не wrap_content и при этом не имел фиксированного размера.
+        \n\nПришлось повозиться, чтобы понять, как задавать высоту в процентах.
+        \n\nНо похоже в итоге получилось и я смогла отвоевать кусочек места рядом с тобой :)
+        \n\n
     </string>
 </resources>

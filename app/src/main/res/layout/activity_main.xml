@@ -58,6 +58,20 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/reset" />
 
+        <Button
+            android:id="@+id/second_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/second_screen" />
+
+        <Button
+            android:id="@+id/test_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/test_screen" />
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

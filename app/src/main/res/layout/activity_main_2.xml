@@ -5,35 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="100"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/name_text"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:textAlignment="center"
-        style="@style/NameStyle" />
-
-    <ImageView
-        android:id="@+id/star_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/yellow_star"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
-
-    <ScrollView
-        android:id="@+id/bio_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_weight="98"
+        android:layout_height="0dp"
+        android:weightSum="100"
+        android:paddingBottom="5dp"
+        android:orientation="vertical">
         <TextView
-            android:id="@+id/bio_text"
-            style="@style/NameStyle"
+            android:id="@+id/name_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/bio" />
-    </ScrollView>
+            android:text="@string/name"
+            android:textAlignment="center"
+            style="@style/NameStyle" />
+
+        <ImageView
+            android:id="@+id/star_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/yellow_star"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ScrollView
+            android:id="@+id/bio_scroll"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:layout_height="0dp"
+            tools:ignore="NestedWeights">
+
+            <TextView
+                android:id="@+id/bio_text"
+                style="@style/NameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/bio" />
+        </ScrollView>
+        <ScrollView
+            android:id="@+id/bio_scroll2"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/bio_text2"
+                style="@style/NameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/bio2" />
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/first_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/to_first_screen" />
 </LinearLayout>

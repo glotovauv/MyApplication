@@ -3,6 +3,7 @@ package com.home.demo.task_manager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,8 @@ class TestActivity: AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.test_toolbar))
         textView = findViewById(R.id.textView)
         checkBox = findViewById(R.id.chbExtMenu)
+
+        findViewById<Button>(R.id.first_screen).setOnClickListener{finish()}
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {

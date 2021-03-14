@@ -1,5 +1,6 @@
 package com.home.demo.task_manager
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +32,23 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener { rollDice() }
         countUpButton.setOnClickListener { countUp() }
         resetButton.setOnClickListener { reset() }
+
+        val toSecondScreen: Button = findViewById(R.id.second_screen)
+        val toTestScreen: Button = findViewById(R.id.test_screen)
+
+        toSecondScreen.setOnClickListener {
+            run {
+                val intent = Intent(this@MainActivity, MainActivity2::class.java)
+                startActivity(intent)
+            }
+        }
+
+        toTestScreen.setOnClickListener {
+            run {
+                val intent = Intent(this@MainActivity, TestActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
     private fun rollDice() {
