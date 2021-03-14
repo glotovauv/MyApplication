@@ -37,17 +37,13 @@ class MainActivity : AppCompatActivity() {
         val toTestScreen: Button = findViewById(R.id.test_screen)
 
         toSecondScreen.setOnClickListener {
-            run {
-                val intent = Intent(this@MainActivity, MainActivity2::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this@MainActivity, MainActivity2::class.java)
+            startActivity(intent)
         }
 
         toTestScreen.setOnClickListener {
-            run {
-                val intent = Intent(this@MainActivity, TestActivity::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this@MainActivity, TestActivity::class.java)
+            startActivity(intent)
         }
     }
 
