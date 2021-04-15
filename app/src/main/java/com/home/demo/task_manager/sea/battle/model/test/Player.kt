@@ -1,4 +1,4 @@
-package com.home.demo.task_manager.test
+package com.home.demo.task_manager.sea.battle.model.test
 
 abstract class Player {
     val myField = Field()

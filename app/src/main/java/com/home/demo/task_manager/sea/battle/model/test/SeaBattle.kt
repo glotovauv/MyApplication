@@ -1,4 +1,6 @@
-package com.home.demo.task_manager.test
+package com.home.demo.task_manager.sea.battle.model.test
+
+import com.home.demo.task_manager.sea.battle.model.Ship
 
 class SeaBattle {
 

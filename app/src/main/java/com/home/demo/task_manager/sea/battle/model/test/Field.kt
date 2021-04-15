@@ -1,7 +1,14 @@
-package com.home.demo.task_manager.test
+package com.home.demo.task_manager.sea.battle.model.test
+
+import com.home.demo.task_manager.sea.battle.fieldSize
+import com.home.demo.task_manager.sea.battle.increment
+import com.home.demo.task_manager.sea.battle.model.Ship
+import com.home.demo.task_manager.sea.battle.rangeTo
 
 class Field {
-    private val cells: Array<Array<Int>> = Array(fieldSize) { Array(fieldSize) { 0 } }
+    private val cells: Array<Array<Int>> = Array(fieldSize) { Array(
+        fieldSize
+    ) { 0 } }
     private val cellToShip: MutableMap<Pair<Int, Int>, Ship> = HashMap()
     private val shipList: MutableList<Ship> = ArrayList()
 

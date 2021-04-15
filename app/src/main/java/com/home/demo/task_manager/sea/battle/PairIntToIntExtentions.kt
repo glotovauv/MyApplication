@@ -1,4 +1,4 @@
-package com.home.demo.task_manager.test
+package com.home.demo.task_manager.sea.battle
 
 const val fieldSize = 10
 
